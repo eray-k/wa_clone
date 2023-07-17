@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF008069)),
         useMaterial3: true,
       ),
       home: const HomePage(),
@@ -99,7 +99,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: Theme.of(context).colorScheme.primary,
           child: const Icon(
             Icons.message_rounded,
-            color: Colors.white,
+            color: Colors.white,  
           ),
         ),
       ),
