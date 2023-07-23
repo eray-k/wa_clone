@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wa_clone/views/chat_page.dart';
 
 class ContactCard extends StatefulWidget {
   const ContactCard({super.key});
@@ -12,7 +13,8 @@ class _ContactCardState extends State<ContactCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        //TODO: PUSH CHAT SCREEN
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const ChatPage()));
       },
       child: Row(
         children: [
