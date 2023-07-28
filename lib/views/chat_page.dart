@@ -122,7 +122,7 @@ class MessageView extends StatelessWidget {
           padding: const EdgeInsets.all(4.0),
           child: Container(
             padding: const EdgeInsets.all(8.0),
-            //TODO: Message box arrow
+            //TODO: Message box arrow, focus problem
             decoration: BoxDecoration(
                 color: (isMine ? Colors.green : Colors.white),
                 borderRadius: const BorderRadius.all(Radius.circular(8.0))),
