@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wa_clone/models/contact.dart';
 import 'package:wa_clone/views/chat_page.dart';
 
 class ContactCard extends StatefulWidget {
-  const ContactCard({super.key});
+  final Contact contact;
+  const ContactCard({super.key, required this.contact});
 
   @override
   State<ContactCard> createState() => _ContactCardState();
@@ -14,7 +16,9 @@ class _ContactCardState extends State<ContactCard> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const ChatPage()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => ChatPage(contact: widget.contact)));
       },
       child: Row(
         children: [
@@ -23,7 +27,7 @@ class _ContactCardState extends State<ContactCard> {
             child: IconButton.filledTonal(
                 onPressed: () {}, icon: const Icon(Icons.person), iconSize: 36),
           ),
-          const Expanded(
+          Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -34,8 +38,8 @@ class _ContactCardState extends State<ContactCard> {
                   crossAxisAlignment: CrossAxisAlignment.baseline,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
-                    Text('Contact Name'),
-                    Padding(
+                    Text(widget.contact.name),
+                    const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                       child: Text(
                         '12:00',
@@ -44,7 +48,7 @@ class _ContactCardState extends State<ContactCard> {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                   style: TextStyle(
                       color: Colors.grey,
